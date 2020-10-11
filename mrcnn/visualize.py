@@ -102,10 +102,11 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     if not N:
         print("\n*** No instances to display *** \n")
     else:
-        assert boxes.shape[0] == masks.shape[-1] == class_ids.shape[0]
+        #assert boxes.shape[0] == masks.shape[-1] == class_ids.shape[0]
 
-    # If no axis is passed, create one and automatically call show()
-    auto_show = False
+        # If no axis is passed, create one and automatically call show()
+        auto_show = False
+
     if not ax:
         _, ax = plt.subplots(1, figsize=figsize)
         auto_show = True
@@ -144,7 +145,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         else:
             caption = captions[i]
         ax.text(x1, y1 + 8, caption,
-                color='w', size=11, backgroundcolor="none")
+                color='w', size=14, backgroundcolor="none")
 
         # Mask
         mask = masks[:, :, i]
